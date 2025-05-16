@@ -2,11 +2,6 @@
   box-sizing: border-box;
 }
 
-body, html {
-  overflow-x: hidden;
-  max-width: 100%;
-}
-
 
 html {
   scroll-behavior: smooth;
