@@ -6,8 +6,8 @@ import AdminDashboard from "./pages/AdminDashboard";
 
 function App() {
   return (
-    <Router>
-      <Navbar /> {/* This stays fixed and styled independently */}
+    <Router basename="/">
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/rsvp" element={<GuestRSVP />} />

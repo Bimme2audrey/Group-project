@@ -2,7 +2,6 @@
   "name": "my-ap",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/Bimme2audrey/Group-project",
   "dependencies": {
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
