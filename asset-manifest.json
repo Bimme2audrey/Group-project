@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Bimme2audrey/Group-project/static/css/main.d602b162.css",
+    "main.js": "/Bimme2audrey/Group-project/static/js/main.8dde9eb7.js",
+    "index.html": "/Bimme2audrey/Group-project/index.html",
+    "main.d602b162.css.map": "/Bimme2audrey/Group-project/static/css/main.d602b162.css.map",
+    "main.8dde9eb7.js.map": "/Bimme2audrey/Group-project/static/js/main.8dde9eb7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d602b162.css",
+    "static/js/main.8dde9eb7.js"
+  ]
+}
