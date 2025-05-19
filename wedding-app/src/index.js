@@ -2,11 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'; 
+
 import 'animate.css';
 import 'aos/dist/aos.css';
 
 import App from './App'; 
-import reportWebVitals from './reportWebVitals';
+
 import AOS from 'aos';    
 
 AOS.init({
@@ -20,4 +23,3 @@ root.render(
   </React.StrictMode>
 );
 
-reportWebVitals();

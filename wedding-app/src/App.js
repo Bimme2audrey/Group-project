@@ -3,6 +3,7 @@ import Navbar from "./components/common/Navbar";
 import Home from "./pages/Home";
 import GuestRSVP from "./pages/GuestRSVP";
 import AdminDashboard from "./pages/AdminDashboard";
+import RSVPConfirmation from "./pages/RSVPConfirmation";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/rsvp" element={<GuestRSVP />} />
         <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/rsvp-confirmed" element={<RSVPConfirmation />} />
       </Routes>
     </Router>
   );

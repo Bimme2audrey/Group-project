@@ -1,48 +1,80 @@
 import { useState } from "react";
 
-export default function RSVPForm() {
-  const [code, setCode] = useState("");
-  const [meal, setMeal] = useState("");
+export default function RSVPForm({ onSubmitSuccess }) {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    meal: "",
+  });
+
+  // 🔀 Simple random table assignment (to be improved with backend)
+  const assignRandomSeat = () => {
+    const tables = ["1A", "1B", "2A", "2B", "3A", "3B", "4A", "4B"];
+    return tables[Math.floor(Math.random() * tables.length)];
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!code || !meal) {
-      alert("Please fill in all fields.");
-      return;
-    }
 
-    // TODO: Replace this with actual API call
-    console.log("RSVP Submitted:", { code, meal });
+    const newGuest = {
+      id: crypto.randomUUID(),
+      ...formData,
+      table: assignRandomSeat(),
+    };
+
+    // TODO: Send this to backend API
+    console.log("Submitted RSVP:", newGuest);
+
+    if (onSubmitSuccess) {
+      onSubmitSuccess(newGuest.name); // or pass full guest if needed
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="card p-4 shadow-sm">
-      <h3 className="mb-3">RSVP to the Wedding</h3>
-
+    <form onSubmit={handleSubmit}>
       <div className="mb-3">
-        <label htmlFor="code" className="form-label">Invitation Code</label>
+        <label>Name</label>
         <input
           type="text"
           className="form-control"
-          id="code"
-          value={code}
-          onChange={(e) => setCode(e.target.value)}
-          placeholder="Enter your unique code"
+          value={formData.name}
+          onChange={(e) =>
+            setFormData({ ...formData, name: e.target.value })
+          }
+          required
         />
       </div>
 
       <div className="mb-3">
-        <label htmlFor="meal" className="form-label">Meal Preference</label>
+        <label>Email</label>
+        <input
+          type="email"
+          className="form-control"
+          value={formData.email}
+          onChange={(e) =>
+            setFormData({ ...formData, email: e.target.value })
+          }
+          required
+        />
+      </div>
+
+      <div className="mb-3">
+        <label>Meal Preference</label>
         <select
-          id="meal"
-          className="form-select"
-          value={meal}
-          onChange={(e) => setMeal(e.target.value)}
+          className="form-control"
+          value={formData.meal}
+          onChange={(e) =>
+            setFormData({ ...formData, meal: e.target.value })
+          }
+          required
         >
-          <option value="">Select one...</option>
-          <option value="vegetarian">Vegetarian</option>
-          <option value="non-vegetarian">Non-Vegetarian</option>
-          <option value="vegan">Vegan</option>
+          <option value="" disabled>
+            Select a meal
+          </option>
+          <option value="Chicken">Chicken</option>
+          <option value="Beef">Beef</option>
+          <option value="Vegetarian">Vegetarian</option>
+          <option value="Vegan">Vegan</option>
         </select>
       </div>
 

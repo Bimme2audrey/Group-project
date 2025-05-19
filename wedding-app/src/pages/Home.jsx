@@ -18,7 +18,7 @@ export default function Home() {
         <FloatingHearts />
         <div className="container text-center position-relative" style={{ zIndex: 10, paddingTop: "100px" }}>
           <h1 className="display-4 fw-bold" data-aos="fade-down">
-            You're Invited 💒
+            You're Invited 
           </h1>
           <p className="lead mt-3" data-aos="fade-up" data-aos-delay="300">
             Mr & Mrs • August 16th, 2025 <br />
@@ -55,23 +55,28 @@ export default function Home() {
         </svg>
       </div>
 
-      {/* Captured Moments */}
-      <section className="py-5 bg-light text-dark text-center" data-aos="fade-right">
-        <div className="container">
-          <h2 className="mb-4">Captured Moments</h2>
-          <div className="row">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="col-md-4 mb-3">
-                <img
-                  src={`https://images.unsplash.com/photo-1519741497674-611481863552?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2VkZGluZ3xlbnwwfHwwfHx8MA%3D%3D,${i}`}
-                  className="img-fluid rounded shadow"
-                  alt={`Memory ${i}`}
-                />
-              </div>
-            ))}
-          </div>
+    {/* Captured Moments */}
+<section className="py-5 bg-light text-dark text-center" data-aos="fade-right">
+  <div className="container">
+    <h2 className="mb-4">Captured Moments</h2>
+    <div className="row">
+      {[
+        "https://images.unsplash.com/photo-1460978812857-470ed1c77af0",
+        "https://images.unsplash.com/photo-1525258706463-a8c77635beb1",
+        "https://images.unsplash.com/photo-1542598688-76ad90c5b01e"
+      ].map((url, i) => (
+        <div key={i} className="col-md-4 mb-3">
+          <img
+            src={`${url}?w=600&auto=format&fit=crop&q=60`}
+            className="img-fluid rounded shadow"
+            alt={`Memory ${i + 1}`}
+          />
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Wavy Divider */}
       <div className="wave-divider">
